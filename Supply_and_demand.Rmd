@@ -1,0 +1,51 @@
+---
+title: "Basic Supply and Demand with R"
+author: "Gustavo Rojas-Matute"
+date: "9/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Basic Supply and Demand 
+
+Inverse supply function
+$$p_{s} = 2 + 0.5q $$
+Inverse demand function
+
+$$ p_{d} = 7 - 1.5*q$$
+Plotting for quantities $$q = [1,2,3,4,5]$$
+
+```{r}
+q <- c(1,2,3,4,5)
+p_s <- 2 + 0.5*q
+p_d <- 7 - 1.5*q
+plot(q,p_s, type = 'l', ylab = "p")
+lines(q,p_d)
+
+
+```
+
+Suppose there is an increase in the income, thus the new inverse demand function is: 
+
+$$ p_{d} = 7 - 1.5*q + 1$$
+Plot the new demand curve. 
+Hint: just add the function "lines" (see line 26) to the original code in line 27, but instead of 
+$$q_{d}$$ 
+
+write: 
+$$q_{d} + 1$$
+Also, include the parameter col = "red" to the new demand curve. 
+You will get: 
+
+
+```{r, echo=FALSE}
+q <- c(1,2,3,4,5)
+p_s <- 2 + 0.5*q
+p_d <- 7 - 1.5*q
+plot(q,p_s, type = 'l')
+lines(q,p_d)
+lines(q,p_d + 1, col ="red")
+```
